@@ -32,9 +32,6 @@ io.on('connection', (socket) => {
 
 app.use(setHeader);
 app.use(express.json());
-app.use('/',(req,res)=>{
-          res.send('hello')
-})
 app.use(express.static('frontend/build'));
 app.use('/api/auth',auth);
 app.get('/api/pathDuties',getPathDuties)

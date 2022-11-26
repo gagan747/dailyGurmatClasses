@@ -17,13 +17,16 @@ export default function Signup() {
 	const [ showPassword,setShowPassword ] = useState(false);
 	const signup = async() => {
 		try{
-		 const res = await fetch('http://localhost:5000/api/auth/register',{
-			method:'POST',
-			body:JSON.stringify(formData),
-			headers:{
-				"content-type":'application/json'
-			}
-		 });
+		 const res = await fetch(
+				'https://dailgurmatclasses.herokuapp.com/api/auth/register',
+				{
+					method: 'POST',
+					body: JSON.stringify(formData),
+					headers: {
+						'content-type': 'application/json',
+					},
+				},
+			);
 		 const data = await res.json();
 		 if (res.status === 201) {
 				localStorage.setItem('x-auth-token', res.headers.get('x-auth-token'));

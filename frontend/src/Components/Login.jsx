@@ -13,13 +13,16 @@ export default function Login() {
 	const navigate = useNavigate();
 	const login = async () => {
 		try {
-			const res = await fetch('http://localhost:5000/api/auth/login', {
-				method: 'POST',
-				body: JSON.stringify(formData),
-				headers: {
-					'content-type': 'application/json',
+			const res = await fetch(
+				'https://dailgurmatclasses.herokuapp.com/api/auth/login',
+				{
+					method: 'POST',
+					body: JSON.stringify(formData),
+					headers: {
+						'content-type': 'application/json',
+					},
 				},
-			});
+			);
 			const data = await res.json();
 			if(res.status===200)
 			{

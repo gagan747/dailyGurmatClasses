@@ -27,7 +27,7 @@ function Navbar() {
 	},[])
 	const fetchPathDuties = async () => {
 		try{
-		const res = await fetch('http://localhost:5000/api/pathDuties');
+		const res = await fetch('https://dailgurmatclasses.herokuapp.com/api/pathDuties');
 		const data = await res.json();
 		const userBookings = data.duties.filter((duty)=>{
 		return localStorage.getItem('username') && (duty.booked?.bookedBy?.username === localStorage.getItem('username'))
@@ -48,7 +48,7 @@ function updateWindowSize() {
 
 	const handleUnbook = async (ashtpadi,user_id) => {
 		try {
-			const res = await fetch('http://localhost:5000/api/pathDuties', {
+			const res = await fetch('https://dailgurmatclasses.herokuapp.com/api/pathDuties', {
 				method: 'DELETE',
 				body: JSON.stringify({
 					ashtpadi,user_id
@@ -74,7 +74,7 @@ function updateWindowSize() {
 		if(!localStorage.getItem('x-auth-token'))
                       return navigate('/login');
 		  setBookLoader({[ashtpadi]:true})
-		const res = await fetch('http://localhost:5000/api/pathDuties', {
+		const res = await fetch('https://dailgurmatclasses.herokuapp.com/api/pathDuties', {
 			method: 'POST',
 			body: JSON.stringify({
 				ashtpadi,
