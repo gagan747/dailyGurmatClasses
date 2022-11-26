@@ -35,6 +35,12 @@ app.use('/api/auth',auth);
 app.get('/api/pathDuties',getPathDuties)
 app.post('/api/pathDuties',authenticate,postPathDuty);
 app.delete('/api/pathDuties',authenticate,authorizeToDelete,deletePathDuty)
+app.use(express.static(path.join(__dirname, '../frontend', 'build')));
+app.get('/*', (req, res) => {
+          res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
+})
+
+
 process.on('uncaughtException', (ex) => {
           console.log('We got uncaught exception', ex);
           process.exit(1);

@@ -19,7 +19,7 @@ function App() {
 					transition={Zoom}
 					position={'top-center'}
 				/>
-    <Router>
+    <Router basename='/'>
       <Routes>
       <Route path='/' element={<Navbar appBody={appBody} /> } />
         <Route path='/login' element={<Login />} />
