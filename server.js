@@ -32,14 +32,20 @@ io.on('connection', (socket) => {
 
 app.use(setHeader);
 app.use(express.json());
+app.use('/',(req,res)=>{
+          res.send('hello')
+})
+app.use(express.static('frontend/build'));
 app.use('/api/auth',auth);
 app.get('/api/pathDuties',getPathDuties)
 app.post('/api/pathDuties',authenticate,postPathDuty);
 app.delete('/api/pathDuties',authenticate,authorizeToDelete,deletePathDuty)
-app.use(express.static('frontend/build'));
+
 app.get('*', (req, res) => {
+          console.log('hello')
           res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 });
+
 process.on('uncaughtException', (ex) => {
           console.log('We got uncaught exception', ex);
 });
