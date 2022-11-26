@@ -1,4 +1,5 @@
 const cors = require('cors');
+const path = require('path')
 const express = require('express');
 const auth = require('./routers/auth')
 const app = express();
@@ -39,11 +40,8 @@ app.use(express.static(path.join(__dirname, '../frontend', 'build')));
 app.get('/*', (req, res) => {
           res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
 })
-
-
 process.on('uncaughtException', (ex) => {
           console.log('We got uncaught exception', ex);
-          process.exit(1);
 });
 app.use((err, req, res, next) => {
           console.error(err);
