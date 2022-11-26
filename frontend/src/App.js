@@ -8,7 +8,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, Zoom } from 'react-toastify'
-import "@fortawesome/fontawesome-free/js/all"
+
 
 function App() { 
   const appBody = useRef(null);
