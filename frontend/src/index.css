@@ -102,7 +102,9 @@ code {
 .booked-by{
   right: 77px;
 }
-
+ .toast-message {
+   min-width: 1024px
+ }
 
 }
 .pathDutyDiv{
@@ -282,3 +284,4 @@ box-sizing: border-box;
                                                                                                             text-align: center;
                                                                                                             font-size: 25px;
                                                                                                          }
+                                                                                                        

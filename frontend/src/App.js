@@ -19,6 +19,7 @@ function App() {
 					autoClose={1000}
 					transition={Zoom}
 					position={'top-center'}
+          className='toast-message'
 				/>
     <Router basename='/'>
       <Routes>
