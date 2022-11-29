@@ -33,6 +33,12 @@ io.on('connection', (socket) => {
 app.use(setHeader);
 app.use(express.json());
 app.use(express.static('frontend/build'));
+
+app.use('/meow',(req,res)=>{
+          res.status(200)
+          res.send(res.status)
+          
+})
 app.use('/api/auth',auth);
 app.get('/api/pathDuties',getPathDuties)
 app.post('/api/pathDuties',authenticate,postPathDuty);
@@ -57,6 +63,4 @@ app.use((err, req, res, next) => {
 // }
 httpServer.listen(process.env.PORT || 5000, () => {console.log(`Listening on port ${process.env.PORT || 5000}...`)
 require('./dbConnect');
-
-
 });
