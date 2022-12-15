@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 
 app.use(setHeader);
 app.use(express.json());
-app.get('/',()=>{
+app.get('/',(req,res)=>{
           res.send('hello')
 })
 app.use(express.static('frontend/build'));
