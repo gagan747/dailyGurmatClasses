@@ -32,10 +32,7 @@ io.on('connection', (socket) => {
 
 app.use(setHeader);
 app.use(express.json());
-app.get('/',(req,res)=>{
-          res.send('hello')
-})
-app.use(express.static('frontend/build'));
+app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.use('/meow',(req,res)=>{
           res.status(200)
