@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import messageCleaner from '../utils/messageCleaner';
 import { useState, useEffect } from 'react';
 import { socket } from '../socket';
+import hostUrl from '../config'
 
 function Navbar() {
 	const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Navbar() {
 	const fetchPathDuties = async () => {
 		try {
 			const res = await fetch(
-				'https://dailgurmatclasses.herokuapp.com/api/pathDuties',
+				`${hostUrl}/api/pathDuties`,
 			);
 			const data = await res.json();
 			const userBookings = data.duties.filter((duty) => {
@@ -57,7 +58,7 @@ function Navbar() {
 	const handleUnbook = async (ashtpadi, user_id) => {
 		try {
 			const res = await fetch(
-				'https://dailgurmatclasses.herokuapp.com/api/pathDuties',
+				`${hostUrl}/api/pathDuties`,
 				{
 					method: 'DELETE',
 					body: JSON.stringify({
@@ -86,7 +87,7 @@ function Navbar() {
 			if (!localStorage.getItem('x-auth-token')) return navigate('/login');
 			setBookLoader({ [ashtpadi]: true });
 			const res = await fetch(
-				'https://dailgurmatclasses.herokuapp.com/api/pathDuties',
+				`${hostUrl}/api/pathDuties`,
 				{
 					method: 'POST',
 					body: JSON.stringify({
@@ -145,9 +146,9 @@ function Navbar() {
 						<div
 							className='pathDuties'
 							style={{
-								marginTop: '45px',
+								marginTop: '40px',
 								height: '350px',
-
+                                                                      
 								overflowY: 'scroll',
 							}}>
 							{pathDuties.map((duty) => {

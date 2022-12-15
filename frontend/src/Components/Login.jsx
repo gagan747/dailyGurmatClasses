@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import messageCleaner from '../utils/messageCleaner';
+import hostUrl from '../config'
 
 export default function Login() {
 	const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ export default function Login() {
 	const login = async () => {
 		try {
 			const res = await fetch(
-				'https://dailgurmatclasses.herokuapp.com/api/auth/login',
+				`${hostUrl}/api/auth/login`,
 				{
 					method: 'POST',
 					body: JSON.stringify(formData),

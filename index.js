@@ -45,7 +45,6 @@ app.post('/api/pathDuties',authenticate,postPathDuty);
 app.delete('/api/pathDuties',authenticate,authorizeToDelete,deletePathDuty)
 
 app.get('*', (req, res) => {
-          console.log('hello')
           res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 });
 

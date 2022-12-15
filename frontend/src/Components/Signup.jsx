@@ -1,4 +1,4 @@
-import e from 'cors';
+import hostUrl from '../config'
 import React from 'react';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ export default function Signup() {
 	const signup = async() => {
 		try{
 		 const res = await fetch(
-				'https://dailgurmatclasses.herokuapp.com/api/auth/register',
+				`${hostUrl}/api/auth/register`,
 				{
 					method: 'POST',
 					body: JSON.stringify(formData),
