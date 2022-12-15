@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.use('/meow',(req,res)=>{
           res.status(200)
-          res.send(res.status)
+          res.send(200)
           
 })
 app.use('/api/auth',auth);
