@@ -5,10 +5,12 @@
   "main": "index.js",
    "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd frontend && npm run build && cd .. && node index.js",
+    "start": "cd frontend && npm run build && cd .. && node index.js",  
     "start-dev": "cd frontend && npm run build-dev && cd .. && node index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "importantComment":"// wrong kiya h mene ,mene bhale hi npm start m npm run build kra rha hu pr npm run build kese chlega,local m to chljaega pr deploy krte waqt unke server m kese chlega,uske liye frontend ka npm i hona jaroori h tabhi to use node modules me se  usko build cmd milegi, herokupostuild  bhi dekhle chahe npm run build se phele npm i h, isliye simple npm start m node index rakh ,jisse deploy m dikkt na ho or han deploy se phele npm run build krlio phir push krio git m ,baki npm start dev likhi ren e local m chlane m or scripts samajhne m asani hogi age bhul gya to"   
   },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
