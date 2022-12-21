@@ -273,12 +273,11 @@ function Navbar() {
 													}}
 													className='button'>
 													<strong>
-														Book{' '}
-														{bookLoader[`${duty.ashtpadi}`] && (
+														{bookLoader[`${duty.ashtpadi}`] ? (
 															<i
 																class='fa fa-spinner fa-spin'
 																style={{ fontSize: '24px' }}></i>
-														)}
+														) : 'Book' }
 													</strong>
 												</button>
 											)}
