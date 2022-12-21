@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b7cd6a5b.css",
+    "main.js": "/static/js/main.3dcb2e62.js",
+    "static/js/787.c6fbec18.chunk.js": "/static/js/787.c6fbec18.chunk.js",
+    "static/media/nishan_sahib.jpg": "/static/media/nishan_sahib.0ca425da37b7aca7fc78.jpg",
+    "index.html": "/index.html",
+    "main.b7cd6a5b.css.map": "/static/css/main.b7cd6a5b.css.map",
+    "main.3dcb2e62.js.map": "/static/js/main.3dcb2e62.js.map",
+    "787.c6fbec18.chunk.js.map": "/static/js/787.c6fbec18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7cd6a5b.css",
+    "static/js/main.3dcb2e62.js"
+  ]
+}
