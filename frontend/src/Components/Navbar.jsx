@@ -85,7 +85,7 @@ function Navbar() {
 	const bookAshtpadi = async (ashtpadi) => {
 		try {
 			if (!localStorage.getItem('x-auth-token')) return navigate('/login');
-			setBookLoader({ [ashtpadi]: true });
+			setBookLoader({ ...bookLoader,[ashtpadi]: true });
 			const res = await fetch(
 				`${hostUrl}/api/pathDuties`,
 				{
@@ -104,16 +104,16 @@ function Navbar() {
 			else if (res.status.toString().startsWith('2')) {
 				toast.success(messageCleaner(data.message), { toastId: 'navbar' });
 				await fetchPathDuties();
-				setBookLoader({ [ashtpadi]: undefined });
 				socket.emit('onBookAshtpadi');
 				return;
 			} else {
 				toast.error(messageCleaner(data.message), { toastId: 'navbarerror' });
-				setBookLoader({ [ashtpadi]: undefined });
 				return;
 			}
 		} catch (err) {
 			toast.error(messageCleaner(err), { toastId: 'navbarerror' });
+		}finally{
+			setBookLoader({});
 		}
 	};
 	return (
