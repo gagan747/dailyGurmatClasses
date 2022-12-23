@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.use('/meow',(req,res)=>{
           res.status(200)
-          console.log('hello')
+          console.log('hello ji')
           res.send('hitted')
           
 })
