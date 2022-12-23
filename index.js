@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 
 app.use('/meow',(req,res)=>{
-          res.status(200)
+          
           res.send('hitted')
           
 })
